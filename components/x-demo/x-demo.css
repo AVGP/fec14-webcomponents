@@ -1,0 +1,21 @@
+textarea, iframe {
+  position: relative;
+  width: 48%;
+  margin: 0;
+  box-sizing: border-box;
+  height: 100%;
+  display: inline-block;
+  background: white;
+}
+
+@media print {
+  iframe { display: none; }
+  textarea {
+    width: 100%;
+    height: 80%;
+    margin: 0;
+    box-sizing: border-box;
+    display: block;
+    font-size: 1em;
+  }
+}

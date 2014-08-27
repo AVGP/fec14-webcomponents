@@ -1,0 +1,508 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Web components 101</title>
+    <meta charset="utf-8">
+    <script src="platform.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="import" href="components/x-slide.html">
+    <link rel="import" href="components/x-deck/x-deck.html">
+    <link rel="import" href="components/x-demo/x-demo.html">
+  </head>
+  <body>
+    <x-deck>
+
+
+
+      <x-slide>
+        <div class="centerpiece-only shaded">
+          <h1>Real World Web Components</h1>
+          <h2>Are we ready?</h2>
+        </div>
+      </x-slide>
+
+
+
+      <x-slide class="filled">
+        <h1>Grüeziwohl!</h1>
+        <img src="https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xfa1/t1.0-9/528507_10151026500788375_1593423569_n.jpg" style="float:left; margin-right: 2em">
+        <p>
+          I'm <span style="color: #015662">Martin Naumann</span>, aka <a href="https://www.twitter.com/g33konaut"><span>@g33konaut</span></a>.<br>
+          I <a href="https://github.com/avgp"><span style="color: #E61100">write some code</span></a>, contribute to open source
+          and maintain <a href="https://github.com/centralway/grunt-phonegap-build"><span style="color: #0D328F">grunt-phonegap-build</span></a>
+          and <a href="http://ox86.tumblr.com"><span style="color: #CC8800">blog every now and then</span></a>.
+        </p>
+        <p>
+          <span style="font-size: 1.5em; font-weight: bold; color: red">&lt;3</span> the web and <a href="http://avgp.github.io/web-components-support/">run analytics on web component support</a>
+        </p>
+        <p>
+          Slides are online at <a href="https://bit.ly/fec14-webcomponents">bit.ly/fec14-webcomponents</a><br>
+          (and they're also done in web components)
+        </p>
+      </x-slide>
+
+
+
+      <x-slide class="filled">
+        <h1 style="margin-bottom: 0.5em">Please fasten your seatbelts...</h1>
+        <ul class="timeline">
+          <li><span>Part 1: A bit of history</span></li>
+          <li><span>Part 2: Enter web components</span></li>
+          <li><span>Part 3: Are we there yet?</span></li>
+        </ul>
+      </x-slide>
+
+
+
+      <x-slide class="filled">
+        <h1 style="margin-bottom: 0.5em">Part 1: Let's talk about <span style="color: #0D328F">HTML</span></h1>
+        <div style="text-align: center"><img src="html_easy.jpg" height="500"></div>
+      </x-slide>
+
+
+
+      <x-slide class="filled">
+        <h1>1991: HTML 1.0</h1>
+        <ul>
+          <li>TITLE</li>
+          <li>ISINDEX</li>
+          <li>ANCHOR</li>
+          <li>ISINDEX</li>
+          <li>PLAINTEXT</li>
+          <li>LISTING</li>
+          <li>P</li>
+          <li>H1, H2, ..., H6</li>
+          <li>ADDRESS</li>
+          <li>UL, MENU, DIR</li>
+        </ul>
+      </x-slide>
+
+
+
+      <x-slide class="filled">
+        <h1>1993: HTML 2.0</h1>
+        <ul>
+            <li>+ Forms</li>
+            <li>+ Images</li>
+            <li>+ Head/Body</li>
+            <li>+ Strict mode</li>
+        </ul>
+      </x-slide>
+
+
+
+
+      <x-slide class="filled">
+        <h1>1995: HTML 3.0</h1>
+        <p>A whopping <span style="color: #D56200">150 pages of specs</span></p>
+        <p>Yet each browser had <span style="color: #E61100">proprietary extensions</span></p>
+        <h2 style="text-align: center">:(</h2>
+      </x-slide>
+
+
+
+      <x-slide class="filled">
+        <h1 style="text-decoration: line-through">1995: HTML 3.0</h1>
+        <p>A whopping <span style="color: #D56200">150 pages of specs</span></p>
+        <p>Yet each browser had <span style="color: #E61100">proprietary extensions</span></p>
+        <h2 style="text-align: center">:(</h2>
+      </x-slide>
+
+
+
+      <x-slide class="filled">
+        <h1>1998: HTML 4.0</h1>
+        <p>A whopping <span style="color: #D56200">3 modes</span> of "fun"!</p>
+        <ol>
+          <li>strict</li>
+          <li>transitional</li>
+          <li>frameset</li>
+        </ol>
+      </x-slide>
+
+
+
+      <x-slide class="filled" style="text-align: center">
+        <h1>1998-2008:</h1>
+        <img src="hangon.gif">
+        <p>???</p>
+      </x-slide>
+
+
+
+      <x-slide class="filled">
+        <h1 class="centerpiece-only">Meanwhile on the web...</h1>
+      </x-slide>
+
+
+
+
+      <x-slide class="filled">
+        <div style="text-align: center;">
+          <h1>The web <em>evolved</em></h1>
+          <p style="margin-top: 6em"><img src="ui_then.gif" height="200" style="height: 200px; vertical-align: middle;"> =&gt; <img src="ui_now.png" height="200" style="height: 200px; vertical-align: middle;"></p>
+        </div>
+      </x-slide>
+
+
+
+      <x-slide class="filled">
+        <div class="centerpiece-only" style="text-align: center">
+          <h1>But...</h1>
+          <h2>HTML was still <span style="color: #D56200">primarily built</span> for documents.</h2>
+        </div>
+      </x-slide>
+
+
+
+      <x-slide class="filled" style="text-align: center">
+        <h1>RIA, Web 2.0 &amp; SPAs</h1>
+        <div class="centerpiece-only">
+          <h2>The web isn't just documents anymore...</h2>
+          <img src="web20.jpg">
+        </div>
+      </x-slide>
+
+
+
+      <x-slide class="filled">
+        <div style="text-align: center;">
+          <h1>How to move forward?</h1>
+          <p style="margin-top: 6em"><img src="ui_then.gif" height="200" style="height: 200px; vertical-align: middle;"> =&gt; <img src="ui_now.png" height="200" style="height: 200px; vertical-align: middle;"></p>
+        </div>
+      </x-slide>
+
+
+
+      <x-slide class="filled">
+        <div style="text-align: center;">
+          <h1>How to move forward?</h1>
+          <h2>Extend!</h2>
+        </div>
+      </x-slide>
+
+
+
+      <x-slide class="filled">
+        <div class="centerpiece-only">
+          <h1>Enough history</h1>
+          <h2>Components, now!</h2>
+        </div>
+      </x-slide>
+
+
+      <x-slide class="filled">
+        <div class="centerpiece-only">
+          <h1>Enough history</h1>
+          <h2>Well, first of all: A Problem</h2>
+        </div>
+      </x-slide>
+
+
+
+      <x-slide class="filled">
+        <h1>Example 1: Filterable list</h1>
+        <x-demo style="display: block; height: 70vh; width: 90%; position: relative; left: 5%; overflow: hidden;" src="demo1.html"></x-demo>
+        <p><a href="https://github.com/AVGP/fec14-webcomponents/demo1.html">Demo on Github</a></p>
+      </x-slide>
+
+
+
+      <x-slide class="filled">
+        <div style="text-align: center;">
+          <h1>To me that feels like...</h1>
+          <img src="yak-shaving.gif">
+        </div>
+      </x-slide>
+
+
+
+      <x-slide class="filled">
+        <div style="text-align: center;">
+          <h1>Really...?</h1>
+          <h2>Is that how we're gonna extend our platform?</h2>
+        </div>
+      </x-slide>
+
+
+
+      <x-slide class="filled" style="text-align: center">
+          <h1>But how to unsuck it?</h1>
+          <ol style="text-align: left">
+            <li>Keep it a Javascript hack</li>
+            <li>Try to implement it directly in the browser's codebases</li>
+            <li>Try to get it standardized</li>
+          </ol>
+      </x-slide>
+
+
+
+      <x-slide class="filled" style="text-align: center">
+          <h1>But how to unsuck it?</h1>
+          <ol style="text-align: left">
+            <li style="color: darkgrey; text-decoration: line-through">Keep it a Javascript hack</li>
+            <li style="color: darkgrey; text-decoration: line-through">Try to implement it directly in the browser's codebases</li>
+            <li style="font-weight: bold">Try to get it standardized</li>
+          </ol>
+      </x-slide>
+
+
+
+      <x-slide class="filled" style="text-align: center">
+          <h1>But how to unsuck it?</h1>
+          <ol style="text-align: left">
+            <li style="color: darkgrey; text-decoration: line-through">Keep it a Javascript hack</li>
+            <li style="color: darkgrey; text-decoration: line-through">Try to implement it directly in the browser's codebases</li>
+            <li style="font-weight: bold">Try to get it standardized</li>
+          </ol>
+          <img src="wcag_irc.png" width="75%">
+      </x-slide>
+
+
+
+      <x-slide class="filled">
+        <div class="centerpiece-only">
+          <h1>What now?</h1>
+          <img src="spongebob.jpg" height="300" style="visibility: hidden">
+        </div>
+      </x-slide>
+
+
+
+      <x-slide class="filled">
+        <div class="centerpiece-only" style="text-align: center">
+          <h1>What now?</h1>
+          <img src="spongebob.jpg" height="300">
+        </div>
+      </x-slide>
+
+
+
+      <x-slide class="filled" style="background:url(buildingblockception.gif); background-size: cover;">
+        <div class="centerpiece-only shaded" style="text-align: center">
+          <h2>
+            Building <span style="color: #D56200">new HTML elements</span>
+            using <span style="color: #D56200">HTML, CSS &amp; Javascript</span>
+          </h2>
+        </div>
+      </x-slide>
+
+
+
+      <x-slide class="filled" style="text-align: center">
+          <h1>Web components = </h1>
+          <ul style="text-align: left">
+            <li>Template element</li>
+            <li>Shadow DOM</li>
+            <li>Custom elements</li>
+            <li>HTML imports</li>
+          </ul>
+          <p>See <a href="http://w3c.github.io/webcomponents/explainer/">The W3C intro for it</a>, too</p>
+      </x-slide>
+
+
+
+     <x-slide class="filled">
+       <h1 class="center">Template elements</h1>
+       <x-demo style="display: block; height: 70vh; width: 90%; position: relative; left: 5%; overflow: hidden;" src="demo2.html"></x-demo>
+       <p><a href="https://github.com/AVGP/fec14-webcomponents/demo2.html">Demo on Github</a></p>
+     </x-slide>
+
+     <x-slide class="filled">
+       <h1 class="center">Shadow DOM</h1>
+       <x-demo style="display: block; height: 70vh; width: 90%; position: relative; left: 5%; overflow: hidden;" src="demo3.html"></x-demo>
+       <p><a href="https://github.com/AVGP/fec14-webcomponents/demo3.html">Demo on Github</a></p>
+     </x-slide>
+
+     <x-slide class="filled">
+       <h1 class="center">Custom elements</h1>
+       <x-demo style="display: block; height: 70vh; width: 90%; position: relative; left: 5%; overflow: hidden;" src="demo4.html"></x-demo>
+       <p><a href="https://github.com/AVGP/fec14-webcomponents/demo4.html">Demo on Github</a></p>
+     </x-slide>
+
+     <x-slide class="filled">
+       <h1 class="center">HTML imports</h1>
+       <x-demo style="display: block; height: 70vh; width: 90%; position: relative; left: 5%; overflow: hidden;" src="demo5.html"></x-demo>
+       <p><a href="https://github.com/AVGP/fec14-webcomponents/demo5.html">Demo on Github</a></p>
+     </x-slide>
+
+
+
+      <x-slide class="filled" style="text-align: center">
+          <h1>When?</h1>
+          <h2 style="visibility: hidden">Now</h2>
+          <img src="reaction_meh.jpg">
+      </x-slide>
+
+
+
+      <x-slide class="filled" style="text-align: center">
+          <h1>When?</h1>
+          <h2>Now</h2>
+          <img src="reaction_yay.jpg">
+
+      </x-slide>
+
+
+
+      <x-slide class="filled" style="text-align: center">
+          <h1>When?</h1>
+          <h2>Now, <span style="color: #D56200">sorta</span>.</h2>
+          <img src="reaction_meh.jpg">
+      </x-slide>
+
+
+
+      <x-slide class="filled" style="text-align: center">
+          <h1>When?</h1>
+          <h2>Now, <span style="color: #D56200">sorta</span>.</h2>
+          <img src="xray.png" width="800">
+      </x-slide>
+
+
+
+      <x-slide class="filled" style="text-align: center">
+          <h1>Progress!</h1>
+          <img src="support_old.png" width="800">
+          <p>Source: <a href="http://jonrimmer.github.io/are-we-componentized-yet/">are-we-componentized-yet</a>, captured 03.05.14</p>
+      </x-slide>
+
+
+
+      <x-slide class="filled" style="text-align: center">
+          <h1>Progress!</h1>
+          <img src="support_july.png" width="800">
+          <p>Source: <a href="http://jonrimmer.github.io/are-we-componentized-yet/">are-we-componentized-yet</a>, captured 25.07.14</p>
+      </x-slide>
+
+
+
+      <x-slide class="filled" style="text-align: center">
+          <h1>Progress-o-rama!</h1>
+          <img src="support_august.png" width="800">
+          <p>Source: <a href="http://jonrimmer.github.io/are-we-componentized-yet/">are-we-componentized-yet</a>, captured 28.08.14</p>
+      </x-slide>
+
+
+
+      <x-slide class="filled" style="text-align: center">
+            <h1>Well...</h1>
+            <img src="no_ie6.png">
+      </x-slide>
+
+
+
+      <x-slide class="filled" style="text-align: center">
+          <h1>Test yourself!</h1>
+          <p><a href="http://bit.ly/webcomtest">bit.ly/webcomptest</a></p>
+          <img src="in_the_wild.png" height="400">
+          <p><strong>Caution:</strong> The sample size is too low / too biased to draw conclusions yet</p>
+      </x-slide>
+
+
+
+      <x-slide class="filled" style="text-align: center">
+            <h1>Part 3</h1>
+            <h2>Right... so are we there yet?</h2>
+      </x-slide>
+
+
+
+      <x-slide class="filled" style="text-align: center">
+            <h1>Polyfills?</h1>
+            <img width="800" src="polyfills_1.png">
+      </x-slide>
+
+
+
+      <x-slide class="filled" style="text-align: center">
+          <div class="centerpiece-only">
+            <h1>Hat tip to Google!</h1>
+          </div>
+      </x-slide>
+
+
+
+      <x-slide class="filled" style="text-align: center">
+          <div class="centerpiece-only">
+            <h1>Hat tip to Google!</h1>
+          </div>
+      </x-slide>
+
+
+
+      <x-slide class="filled" style="text-align: center">
+            <h1>But...</h1>
+            <h2>131.819 kb minified</h2>
+            <p>And need to test carefully, because it obviously has limitations</p>
+      </x-slide>
+
+
+
+      <x-slide class="filled" style="text-align: center">
+            <h1>And the browser support</h1>
+            <img src="platform_browser_support.png" width="800">
+      </x-slide>
+
+
+
+      <x-slide class="filled" style="text-align: center">
+            <h1>Another demo...</h1>
+            <div>
+              <a href="http://www.polymer-project.org/components/paper-elements/demo.html">The Paper components</a>
+              and a <a href="http://jsbin.com/lapah/1/edit">JS Bin</a>
+            </div>
+      </x-slide>
+
+
+
+      <x-slide class="filled" style="text-align: center">
+        <h1>Useful links</h1>
+        <h2>Polyfill &amp; frameworks</h2>
+        <ul style="text-align: left">
+          <li><a href="http://www.polymer-project.org">Polymer</a></li>
+          <li><a href="http://www.x-tags.org">X-Tags</a></li>
+        </ul>
+
+        <h2>Try it</h2>
+        <ul style="text-align: left">
+          <li><a href="http://mozilla.github.io/brick/">Brick</a></li>
+          <li><a href="http://customelements.io/">CustomElements.io</a></li>
+          <li><a href="https://apps.webmaker.org/">Mozilla AppMaker</a></li>
+        </ul>
+      </x-slide>
+
+
+
+      <x-slide class="filled" style="text-align: center">
+          <h1>Recap</h1>
+          <ul style="text-align: left">
+            <li>Web components = reusable, custom HTML elements</li>
+            <li>Standards:
+              <ol>
+                <li>Template elements: Markup for the element</li>
+                <li>Shadow DOM: Isolation</li>
+                <li>HTML Imports: Linking &amp; reusing components</li>
+                <li>Custom Elements: Declaration of your tags</li>
+              </ol>
+            </li>
+            <li>Supported in most major browsers (IE and Safari are far behind)</li>
+            <li>Start giving them a try!</li>
+          </ul>
+      </x-slide>
+
+
+
+      <x-slide class="filled" style="text-align: center">
+        <div class="centerpiece-only">
+          <h1>That's all folks!</h1>
+          <h2>Any questions?</h2>
+          <p>
+            <a href="https://twitter.com/g33konaut">@g33konaut</a> | <a href="http://www.geekonaut.de">geekonaut.de</a> <br>
+            <a href="http://bit.ly/fec14-webcomponents">bit.ly/fec14-webcomponents</a></p> | <a href="http://leanpub.com/webcomponents">leanpub.com/webcomponents</a>
+        </div>
+      </x-slide>
+
+    </x-deck>
+  </body>
+</html>

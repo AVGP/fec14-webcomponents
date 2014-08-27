@@ -1,0 +1,42 @@
+<template id="slide">
+  <style>
+    .slide {
+      color: black;
+
+      font-family: Helvetica, Arial, sans-serif;
+    }
+  </style>
+  <div class="slide">
+    <content></content>
+  </div>
+</template>
+
+<script>
+  var XSlide = undefined;
+  (function() {
+    // The polyfill needs to take precedence or it will reference the wrong document
+    if(document._currentScript) {
+      var localDoc = document._currentScript.ownerDocument;
+    } else {
+      var localDoc = document.currentScript.ownerDocument;
+    }
+    var proto = Object.create(HTMLElement.prototype);
+
+    proto.createdCallback = function() {
+      if(this.createShadowRoot) {
+        this._root = this.createShadowRoot();
+      } else {
+        this._root = this.webkitCreateShadowRoot();
+      }
+
+      var tplContent = localDoc.querySelector("template#slide").content;
+      this._root.appendChild(tplContent.cloneNode(true));
+    };
+
+    proto.attachedCallback = function() {
+      var self = this;
+    };
+
+    XSlide = document.registerElement("x-slide", { prototype: proto });
+  })();
+</script>

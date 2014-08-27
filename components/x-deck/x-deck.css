@@ -1,0 +1,34 @@
+    /** Fallback for browsers without ::content pseudo class selector **/
+    x-slide {
+      position: relative;
+      width: 100%;
+      width: 100vw;
+      height: 100%;
+      height: 100vh;
+      border: 1px solid gray;
+    }
+
+    ::content x-slide {
+      display: none;
+    }
+
+    ::content x-slide.active {
+      display: block;
+    }
+
+    @media print {
+      ::content x-slide {
+        display: block;
+        position: relative;
+        width: 29.7cm;
+        min-width: 29.7cm;
+        max-width: 29.7cm;
+        height: 15cm;
+        padding: 2cm;
+        margin: 1cm auto;
+        page-break-after: always;
+        overflow: hidden;
+        font-size: 12pt;
+        background-color: white;
+      }
+    }    
