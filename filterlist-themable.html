@@ -7,10 +7,20 @@
     <content select="li"></content>
   </ul>
 
+  <style>
+    :host-context(.dark) * {
+      background-color: black;
+      color: white;
+    }
+
+    :host-context(.dark) ul {
+      background-color: black;
+      color: white;
+    }
+  </style>
 </template>
 <script>
-  var FilterList = undefined;
-  var currentScript = document.currentScript;
+  var FilterList = undefined, currentScript = document.currentScript;
   (function() {
     var proto = Object.create(HTMLElement.prototype);
 
@@ -20,6 +30,7 @@
       } else {
         this._root = this.webkitCreateShadowRoot();
       }
+
       var tplContent = currentScript.ownerDocument.querySelector("template").content;
 
       this._root.appendChild(tplContent.cloneNode(true));
@@ -36,6 +47,6 @@
       });
     };
 
-    FilterList = document.registerElement("filter-list", { prototype: proto });
+    FilterList2 = document.registerElement("filter-list2", { prototype: proto });
   }());
 </script>

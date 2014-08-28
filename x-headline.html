@@ -1,0 +1,23 @@
+<template>
+  <script>
+    console.log("Hi.");
+  </script>
+  <h1><content></content></h1>
+</template>
+
+<script>
+  var XHeadline = undefined, currentScript = document.currentScript;
+  (function() {
+
+    var elemPrototype = Object.create(HTMLElement.prototype);
+
+    elemPrototype.createdCallback = function() {
+      console.log("Created element");
+      this.root = this.createShadowRoot();
+      var tplContent = currentScript.ownerDocument.querySelector("template").content.cloneNode(true);
+      this.root.appendChild(tplContent);
+    };
+
+    XHeadline = document.registerElement("x-headline", { prototype: elemPrototype });
+  }());
+</script>

@@ -1,0 +1,24 @@
+<template id="newsbox">
+  <script>
+    console.log("Hi.");
+  </script>
+  <h1>NEWS:</h1>
+  <content></content>
+</template>
+
+<script>
+  var XNewsbox = undefined, currentScript = document.currentScript;
+  (function() {
+
+    var elemPrototype = Object.create(HTMLElement.prototype);
+
+    elemPrototype.createdCallback = function() {
+      console.log("Created element");
+      this.root = this.createShadowRoot();
+      var tplContent = currentScript.ownerDocument.querySelector("template").content.cloneNode(true);
+      this.root.appendChild(tplContent);
+    };
+
+    XNewsbox = document.registerElement("x-newsbox", { prototype: elemPrototype });
+  }());
+</script>
